@@ -180,6 +180,9 @@
         </ul>
       </div>
     </nav>
+    <main class="py-4">
+            @yield('content')
+        </main>
   </header>
 
 <!-- jQuery 2.2.3 -->
