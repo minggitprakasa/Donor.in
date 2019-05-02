@@ -31,7 +31,7 @@
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
-    <h1 class="login-box-msg">Login</h1>
+    <h1 class="login-box-msg"></h1>
 
     <form method="POST" action="{{ route('login') }}">
     @csrf
