@@ -2,6 +2,10 @@
 
 @section('bg-img',asset('user/img/home-bg.jpg'))
 
+@section('title','Donor.in Blog')
+
+@section('sub-heading','Ayo Donor')
+
 @section('main-content')
 
     <!-- Main Content -->

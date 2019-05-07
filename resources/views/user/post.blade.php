@@ -2,6 +2,10 @@
 
 @section('bg-img',asset('user/img/post-bg.jpg'))
 
+@section('title','Donor.in Post')
+
+@section('sub-heading','Menjadi Bagian hidup Seseorang')
+
 @section('main-content') 
 
 <article>
