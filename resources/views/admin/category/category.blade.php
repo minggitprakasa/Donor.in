@@ -31,11 +31,7 @@
 
               {{ csrf_field() }}
 
-              @if (count($errors) > 0)
-                @foreach ($errors->all() as $error)
-                  <p class="alert alert-danger"> {{ $error}}</p>
-                @endforeach
-              @endif
+              @include('includes.messages')
               
               <div class="box-body">
                   <div class="col-lg-offset-3 col-lg-6">

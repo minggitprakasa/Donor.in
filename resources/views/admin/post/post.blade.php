@@ -25,11 +25,7 @@
               <h3 class="box-title">Title</h3>
             </div>
 
-            @if (count($errors) > 0)
-              @foreach ($errors->all() as $error)
-                <p class='alert alert-danger'>{{ $error }} </p>
-              @endforeach
-            @endif
+            @include('includes.messages')
 
             <form role="form" action="{{ route('post.store') }}" method="post">
             {{ csrf_field() }}
