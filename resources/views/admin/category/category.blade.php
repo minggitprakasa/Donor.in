@@ -27,17 +27,26 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form">
+            <form role="form" action="{{ route('category.store') }} " method="POST" >
+
+              {{ csrf_field() }}
+
+              @if (count($errors) > 0)
+                @foreach ($errors->all() as $error)
+                  <p class="alert alert-danger"> {{ $error}}</p>
+                @endforeach
+              @endif
+              
               <div class="box-body">
                   <div class="col-lg-offset-3 col-lg-6">
                       <div class="form-group">
-                        <label for="title">Category Title</label>
-                        <input type="text" class="form-control" id="title" name="title" placeholder="Category Title">
+                        <label for="name">Category Title</label>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Category Title">
                       </div>
       
                       <div class="form-group">
-                        <label for="subtitle">Category Slug</label>
-                        <input type="text" class="form-control" id="subtitle" name="subtitle" placeholder="Slug">
+                        <label for="slug">Category Slug</label>
+                        <input type="text" class="form-control" id="slug" name="slug" placeholder="Slug">
                       </div>
       
                       <div class="form-group">
