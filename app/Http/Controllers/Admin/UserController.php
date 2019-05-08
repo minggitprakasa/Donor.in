@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class Postcontroller extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class Postcontroller extends Controller
      */
     public function index()
     {
-        return view('admin.post.show');
+        return view('admin.user.show');
     }
 
     /**
@@ -24,7 +24,7 @@ class Postcontroller extends Controller
      */
     public function create()
     {
-        return view('admin.post.post');
+        return view('admin.user.create');
     }
 
     /**
