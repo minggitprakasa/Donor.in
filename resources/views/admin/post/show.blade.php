@@ -20,6 +20,7 @@
 
         <div class="box">
             <div class="box-header with-border">
+                <a href="{{ route('post.create') }}" class="col-lg-offset-0 btn btn-success">Add New</a>
                 <h3 class="box-title">Title</h3>
                     <div class="box-tools pull-right">
                         <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
@@ -30,7 +31,52 @@
             </div>
 
             <div class="box-body">
-            Start creating your amazing application!
+                <div class="box">
+                    <div class="box-header">
+                        <h3 class="box-title">Data Table With Full Features</h3>
+                    </div>
+                    
+                      <div class="box-body">
+                        <table id="example1" class="table table-bordered table-striped">
+                          <thead>
+                          <tr>
+                            <th>S.No</th>
+                            <th>Title</th>
+                            <th>Subtitle</th>
+                            <th>Slug</th>
+                            <th>Created_at</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                          </tr>
+                          </thead>
+                          <tbody>
+                          @foreach ($posts as $post)
+                            <tr>
+                              <td>{{ $loop->index + 1 }}</td>
+                              <td>{{ $post-> title }} </td>
+                              <td>{{ $post-> subtitle }}</td>
+                              <td>{{ $post-> slug }}</td>
+                              <td>{{ $post-> created_at }}</td>
+                              <td>Edit</td>
+                              <td>Delete</td>
+                            </tr> 
+                          @endforeach
+                          </tbody>
+                          <tfoot>
+                            <tr>
+                                <th>S.No</th>
+                                <th>Title</th>
+                                <th>Subtitle</th>
+                                <th>Slug</th>
+                                <th>Created_at</th>
+                                <th>Edit</th>
+                                <th>Delete</th>
+                            </tr>
+                          </tfoot>
+                        </table>
+                      </div>
+                      <!-- /.box-body -->
+                </div>
             </div>
 
             <div class="box-footer">
