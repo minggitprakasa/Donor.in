@@ -24,9 +24,15 @@
             <div class="box-header with-border">
               <h3 class="box-title">Title</h3>
             </div>
-            <!-- /.box-header -->
-            <!-- form start -->
-            <form role="form">
+
+            @if (count($errors) > 0)
+              @foreach ($errors->all() as $error)
+                <p class='alert alert-danger'>{{ $error }} </p>
+              @endforeach
+            @endif
+
+            <form role="form" action="{{ route('post.store') }}" method="post">
+            {{ csrf_field() }}
               <div class="box-body">
                   <div class="col-lg-6">
                       <div class="form-group">
@@ -49,42 +55,41 @@
                           <input type="checkbox" name="status"> Publish
                         </label>
                       </div>
+
                   </div>
 
                   <div class="col-lg-6">
+
                       <div class="form-group">
                         <label for="image">Image</label>
                         <input type="file" id="image" name="image">
-      
                         <p class="help-block">Input Image</p>
                       </div>
+
                   </div>
+
+              </div>
+              <div class="box">
+
+                <div class="box-header">
+                  <h3 class="box-title">Write Post Body</h3>
+                </div>
+
+                <div class="box-body pad">
+                    <textarea class="textarea" name="body" placeholder="Place some text here"
+                        style="width: 100%; height: 400px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+                </div>
+
               </div>
 
-              <div class="box-footer">
-                <button type="submit" class="btn btn-primary">Submit</button>
-              </div>
-            </form>
-          </div>
-          <!-- /.box -->
-          <div class="box">
-            <div class="box-header">
-              <h3 class="box-title">Write Post Body</h3>
+                <div class="box-footer">
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+
             </div>
-            <!-- /.box-header -->
-            <div class="box-body pad">
-              <form>
-                <textarea class="textarea" name="body" placeholder="Place some text here"
-                    style="width: 100%; height: 400px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
-              </form>
-            </div>
-          </div>
+          </form>
         </div>
-        <!-- /.col-->
       </div>
-      <!-- ./row -->
     </section>
-    <!-- /.content -->
   </div>
-  <!-- /.content-wrapper -->
 @endsection
