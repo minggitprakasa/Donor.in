@@ -23,6 +23,18 @@ Route::get('admin/home',function () {
     return view('admin/home');
 });
 
+Route::get('admin/post',function () {
+    return view('admin.post.post');
+});
+
+Route::get('admin/tag',function () {
+    return view('admin.tag.tag');
+});
+
+Route::get('admin/category',function () {
+    return view('admin.category.category');
+});
+
 Route::get('dashboard', function () {
     return view('dashboard');
 });
