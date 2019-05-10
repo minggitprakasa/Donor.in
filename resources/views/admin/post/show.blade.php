@@ -6,14 +6,8 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Blank page
-        <small>it all starts here</small>
+        Post page
       </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">Examples</a></li>
-        <li class="active">Blank page</li>
-      </ol>
     </section>
 
     <section class="content">
@@ -21,7 +15,6 @@
         <div class="box">
             <div class="box-header with-border">
                 <a href="{{ route('post.create') }}" class="col-lg-offset-0 btn btn-success">Add New</a>
-                <h3 class="box-title">Title</h3>
                     <div class="box-tools pull-right">
                         <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
                         <i class="fa fa-minus"></i></button>
@@ -33,9 +26,8 @@
             <div class="box-body">
                 <div class="box">
                     <div class="box-header">
-                        <h3 class="box-title">Data Table With Full Features</h3>
-                    </div>
-                    
+                        <h3 class="box-title">Post Table</h3>
+                    </div>    
                       <div class="box-body">
                         <table id="example1" class="table table-bordered table-striped">
                           <thead>
@@ -91,14 +83,8 @@
                           </tfoot>
                         </table>
                       </div>
-                      <!-- /.box-body -->
                 </div>
             </div>
-
-            <div class="box-footer">
-                Footer
-            </div>
-
         </div>
     </section>
 </div>

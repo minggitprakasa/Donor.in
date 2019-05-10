@@ -12,21 +12,14 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Blank page
-        <small>it all starts here</small>
+        Category page
       </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">Examples</a></li>
-        <li class="active">Blank page</li>
-      </ol>
     </section>
 
     <section class="content">
 
         <div class="box">
             <div class="box-header with-border">
-                <h3 class="box-title">Title</h3>
                 <a href="{{ route('category.create') }}" class="col-lg-offset-0 btn btn-success">Add New</a>
                     <div class="box-tools pull-right">
                         <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
@@ -40,7 +33,7 @@
                 <div class="box-body">
                     <div class="box">
                       <div class="box-header">
-                        <h3 class="box-title">Data Table With Full Features</h3>
+                        <h3 class="box-title">Category Table</h3>
                       </div>
                       <!-- /.box-header -->
                       <div class="box-body">
@@ -96,11 +89,6 @@
                     </div>
                   </div>
             </div>
-
-            <div class="box-footer">
-                Footer
-            </div>
-
         </div>
     </section>
 </div>

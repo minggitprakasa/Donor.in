@@ -2,7 +2,7 @@
 
 @section('bg-img',asset('user/img/home-bg.jpg'))
 
-@section('title','Donor.in Blog')
+@section('title','Donor.in')
 
 @section('sub-heading','Ayo Donor')
 
@@ -13,7 +13,7 @@
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
         <div class="post-preview">
-          <a href="post.html">
+          <a href="{{ route('post') }}">
             <h2 class="post-title">
               Man must explore, and this is exploration at its greatest
             </h2>

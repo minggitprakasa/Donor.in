@@ -14,7 +14,7 @@
 
 Route::group(['namespace' => 'User'],function() {
     Route::get('/','HomeController@index');
-    Route::get('post','PostController@index')->name('post');
+    Route::get('post/{post?}','PostController@post')->name('post');
 });
 
 Route::group(['namespace' => 'Admin'],function() {

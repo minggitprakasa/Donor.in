@@ -12,13 +12,12 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Blank page
-        <small>it all starts here</small>
+        Tag page
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
         <li><a href="#">Examples</a></li>
-        <li class="active">Blank page</li>
+        <li class="active">Tag</li>
       </ol>
     </section>
 
@@ -26,7 +25,6 @@
 
         <div class="box">
             <div class="box-header with-border">
-                <h3 class="box-title">Tags</h3>
                   <a href="{{ route('tag.create') }}" class="col-lg-offset-0 btn btn-success">Add New</a>
                     <div class="box-tools pull-right">
                         <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
@@ -39,7 +37,7 @@
             <div class="box-body">
               <div class="box">
                 <div class="box-header">
-                  <h3 class="box-title">Data Table With Full Features</h3>
+                  <h3 class="box-title">Tag Table</h3>
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body">
@@ -94,11 +92,6 @@
                 <!-- /.box-body -->
               </div>
             </div>
-
-            <div class="box-footer">
-                Footer
-            </div>
-
         </div>
     </section>
 </div>
