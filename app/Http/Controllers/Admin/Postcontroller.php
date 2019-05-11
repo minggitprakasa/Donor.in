@@ -48,7 +48,6 @@ class Postcontroller extends Controller
             'slug' => 'required',
             'body' => 'required',
         ]);
-
         $post = new post;
         $post->title = $request->title;
         $post->subtitle = $request->subtitle;
@@ -56,6 +55,7 @@ class Postcontroller extends Controller
         $post->body = $request->body;
         $post->status = $request->status;
         $post-> save();
+        Session::flash('success', 'Page created successfully.');
 
         return redirect(route('post.index'));
     }
@@ -100,6 +100,10 @@ class Postcontroller extends Controller
             'slug' => 'required',
             'body' => 'required',
         ]);
+
+        if ($request->hasFile('image')) {
+            $request->image->store('public');
+        }
 
         $post = post::find($id);
         $post->title = $request->title;
