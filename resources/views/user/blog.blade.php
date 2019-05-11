@@ -29,9 +29,8 @@
             <hr>
         @endforeach
         <!-- Pager -->
-        <div class="clearfix">
-          <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
-        </div>
+        <div class="clearfix next d-flex justify-content-center">
+            {{ $posts->links()}}
       </div>
     </div>
   </div>

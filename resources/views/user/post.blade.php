@@ -16,8 +16,10 @@
 
             @foreach ($post->categories as $category)
               <small class="float-right" style="margin-right:20px">
+                <a href="{{ route('category',$category->slug) }}">
                   {{ $category->name }}
-               </small>
+                </a> 
+              </small>
             @endforeach
 
           {!! htmlspecialchars_decode($post->body) !!}
@@ -25,9 +27,11 @@
 
           <h3>Tag</h3>
           @foreach ($post->tags as $tag)
-          <small class="float-left" style="margin-right:20px; border-radius:5px;border: 1px solid gray;padding: 5px;">
-            {{ $tag->name }}
-          </small>
+          <a href="{{ route('tag',$tag->slug) }}">
+            <small class="float-left" style="margin-right:20px; border-radius:5px;border: 1px solid gray;padding: 5px;">
+              {{ $tag->name }}
+            </small>
+          </a>
           @endforeach
         </div>
       </div>
