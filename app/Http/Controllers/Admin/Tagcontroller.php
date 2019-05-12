@@ -48,8 +48,8 @@ class Tagcontroller extends Controller
     public function store(Request $request)
     {
         $this -> validate($request,[
-            'name' => 'required',
-            'slug' => 'required'
+            'name' => 'required|uniques:tags',
+            'slug' => 'required|uniques:tags'
         ]);
 
         $tag = new tags;

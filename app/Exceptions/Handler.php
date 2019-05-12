@@ -69,7 +69,6 @@ class Handler extends ExceptionHandler
             case 'admin' :
                     return redirect()->guest(route('admin.login'));
                 break;
-
             default :
                     return redirect()->guest(route('login'));
                 break;

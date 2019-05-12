@@ -54,7 +54,7 @@ class Postcontroller extends Controller
         $this->validate($request,[
             'title' => 'required',
             'subtitle' => 'required',
-            'slug' => 'required',
+            'slug' => 'required|unique:posts',
             'body' => 'required',
             'image' => 'required'
         ]);

@@ -48,8 +48,8 @@ class Categorycontroller extends Controller
     public function store(Request $request)
     {
         $this -> validate($request,[
-            'name' => 'required',
-            'slug' => 'required'
+            'name' => 'required|unique:categories',
+            'slug' => 'required|unique:categories'
         ]);
 
         $category = new category;

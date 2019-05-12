@@ -7,7 +7,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        User 
+        Text Editors
         <small>Advanced form element</small>
       </h1>
       <ol class="breadcrumb">
@@ -27,51 +27,31 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form" action="{{ route('user.store') }} " method="POST" >
+            <form role="form" action="{{ route('tag.update',$tag->id) }}" method="post">
 
-              {{ csrf_field() }}
+            {{ csrf_field() }}
+            {{ method_field('PUT')}}
 
               @include('includes.messages')
 
               <div class="box-body">
                   <div class="col-lg-offset-3 col-lg-6">
                       <div class="form-group">
-                        <label for="name">User Name</label>
-                        <input type="text" class="form-control" id="name" name="name" placeholder="User Name">
+                        <label for="name">Tag Title</label>
+                      <input type="text" class="form-control" id="name" name="name" placeholder="Tag Title" value="{{ $tag->name }}">
                       </div>
       
                       <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+                        <label for="slug">Tag Slug</label>
+                        <input type="text" class="form-control" id="subtitle" name="slug" placeholder="Slug" value="{{ $tag->slug}} ">
                       </div>
-
-                      <div class="form-group">
-                          <label for="password">Password</label>
-                          <input type="password" class="form-control" id="password" name="password" placeholder="Password">
-                      </div>
-
-                      <div class="form-group">
-                          <label for="confirm_password">Confirm Password</label>
-                          <input type="password" class="form-control" id="confirm_password" name="confirm_password" placeholder="Confirm Password">
-                      </div>
-
-                      <div class="form-group">
-                          <label for="role">Assign role</label>
-                          <select name="role" id="" class="form-control">
-                            <option value="0">Editor</option>
-                            <option value="1">Publisher</option>
-                            <option value="3">Writer</option>
-                          </select>
-                        </div>
       
                       <div class="form-group">
                         <button type="submit" class="btn btn-primary">Submit</button>
                         <a href="{{ route('tag.index') }} " class="btn btn-warning">Back</a>
                       </div>
-
                   </div>
               </div>
-
             </form>
           </div>
         </div>
