@@ -55,14 +55,18 @@
                           <input type="password" class="form-control" id="confirm_password" name="confirm_password" placeholder="Confirm Password">
                       </div>
 
-                      <div class="form-group">
-                          <label for="role">Assign role</label>
-                          <select name="role" id="" class="form-control">
-                            <option value="0">Editor</option>
-                            <option value="1">Publisher</option>
-                            <option value="3">Writer</option>
-                          </select>
+                      <label>Assign Role</label>
+                      <div class="row">
+                        <div class="form-group col-lg-12">
+                          @foreach ($roles as $role)
+                              <div class="col-lg-3">
+                                <div class="checkbox">
+                                  <label > <input type="checkbox" name="role[]" value="{{ $role->id }} ">{{ $role->name}} </label>
+                                </div>
+                              </div>
+                          @endforeach
                         </div>
+                      </div>
       
                       <div class="form-group">
                         <button type="submit" class="btn btn-primary">Submit</button>

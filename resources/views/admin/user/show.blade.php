@@ -17,7 +17,7 @@
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
         <li><a href="#">Examples</a></li>
-        <li class="active">User</li>
+        <li class="active">Tag</li>
       </ol>
     </section>
 
@@ -79,7 +79,7 @@
                     <tfoot>
                       <tr>
                         <th>S.No</th>
-                        <th>User Name</th>
+                        <th>user Name</th>
                         <th>Edit</th>
                         <th>Delete</th>
                       </tr>

@@ -7,7 +7,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Text Editors
+        Roles
         <small>Advanced form element</small>
       </h1>
       <ol class="breadcrumb">
@@ -23,35 +23,32 @@
         <div class="col-md-12">
           <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title">Title</h3>
+              <h3 class="box-title">Roles</h3>
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form" action="{{ route('tag.update',$tag->id) }}" method="post">
+            <form role="form" action="{{ route('role.update',$role->id) }} " method="POST" >
 
-            {{ csrf_field() }}
-            {{ method_field('PUT')}}
+              {{ csrf_field() }}
+              {{ method_field('PUT') }}
 
               @include('includes.messages')
 
               <div class="box-body">
                   <div class="col-lg-offset-3 col-lg-6">
                       <div class="form-group">
-                        <label for="name">Tag Title</label>
-                      <input type="text" class="form-control" id="name" name="name" placeholder="Tag Title" value="{{ $tag->name }}">
+                        <label for="name">Roles</label>
+                        <input type="text" class="form-control" id="title" name="name" value="{{ $role->name }}"> 
                       </div>
-      
-                      <div class="form-group">
-                        <label for="slug">Tag Slug</label>
-                        <input type="text" class="form-control" id="subtitle" name="slug" placeholder="Slug" value="{{ $tag->slug}} ">
-                      </div>
-      
+  
                       <div class="form-group">
                         <button type="submit" class="btn btn-primary">Submit</button>
-                        <a href="{{ route('tag.index') }} " class="btn btn-warning">Back</a>
+                        <a href="{{ route('role.index') }} " class="btn btn-warning">Back</a>
                       </div>
+
                   </div>
               </div>
+
             </form>
           </div>
         </div>
