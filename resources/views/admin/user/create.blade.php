@@ -1,12 +1,13 @@
 @extends('admin.layouts.app')
 
 @section('main-content')
+
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Text Editors
+        User 
         <small>Advanced form element</small>
       </h1>
       <ol class="breadcrumb">
@@ -26,58 +27,52 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form">
+            <form role="form" action="{{ route('user.store') }} " method="POST" >
+
+              {{ csrf_field() }}
+
+              @include('includes.messages')
+
               <div class="box-body">
-                  <div class="col-lg-6">
+                  <div class="col-lg-offset-3 col-lg-6">
                       <div class="form-group">
-                        <label for="title">Post Title</label>
-                        <input type="text" class="form-control" id="title" name="title" placeholder="Title">
+                        <label for="name">User Name</label>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="User Name">
                       </div>
       
                       <div class="form-group">
-                        <label for="subtitle">Post Sub Title</label>
-                        <input type="text" class="form-control" id="subtitle" name="subtitle" placeholder="Subtitle">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Email">
                       </div>
-      
-                      <div class="form-group">
-                        <label for="slug">Post Slug</label>
-                        <input type="text" class="form-control" id="slug" name="slug" placeholder="Slug">
-                      </div>
-      
-                      <div class="checkbox">
-                        <label>
-                          <input type="checkbox" name="status"> Publish
-                        </label>
-                      </div>
-                  </div>
 
-                  <div class="col-lg-6">
                       <div class="form-group">
-                        <label for="image">Image</label>
-                        <input type="file" id="image" name="image">
-      
-                        <p class="help-block">Input Image</p>
+                          <label for="password">Password</label>
+                          <input type="password" class="form-control" id="password" name="password" placeholder="Password">
                       </div>
+
+                      <div class="form-group">
+                          <label for="confirm_password">Confirm Password</label>
+                          <input type="password" class="form-control" id="confirm_password" name="confirm_password" placeholder="Confirm Password">
+                      </div>
+
+                      <div class="form-group">
+                          <label for="role">Assign role</label>
+                          <select name="role" id="" class="form-control">
+                            <option value="">Editor</option>
+                            <option value="">Publisher</option>
+                            <option value="">Writer</option>
+                          </select>
+                        </div>
+      
+                      <div class="form-group">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <a href="{{ route('tag.index') }} " class="btn btn-warning">Back</a>
+                      </div>
+
                   </div>
               </div>
 
-              <div class="box-footer">
-                <button type="submit" class="btn btn-primary">Submit</button>
-              </div>
             </form>
-          </div>
-          <!-- /.box -->
-          <div class="box">
-            <div class="box-header">
-              <h3 class="box-title">Write Post Body</h3>
-            </div>
-            <!-- /.box-header -->
-            <div class="box-body pad">
-              <form>
-                <textarea class="textarea" name="body" placeholder="Place some text here"
-                    style="width: 100%; height: 400px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
-              </form>
-            </div>
           </div>
         </div>
         <!-- /.col-->
@@ -87,4 +82,5 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
+
 @endsection
