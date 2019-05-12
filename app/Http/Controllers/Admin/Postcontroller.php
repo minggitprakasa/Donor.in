@@ -47,16 +47,19 @@ class Postcontroller extends Controller
             'subtitle' => 'required',
             'slug' => 'required',
             'body' => 'required',
+            'image' => 'required'
         ]);
+        if ($request->hasFile('image')) {
+            $imageName = $request->image->store('public');
+        } 
         $post = new post;
+        $post->image = $imageName;
         $post->title = $request->title;
         $post->subtitle = $request->subtitle;
         $post->slug = $request->slug;
         $post->body = $request->body;
         $post->status = $request->status;
         $post-> save();
-        Session::flash('success', 'Page created successfully.');
-
         return redirect(route('post.index'));
     }
 
@@ -99,13 +102,14 @@ class Postcontroller extends Controller
             'subtitle' => 'required',
             'slug' => 'required',
             'body' => 'required',
+            'image' => 'required'
         ]);
 
         if ($request->hasFile('image')) {
-            $request->image->store('public');
-        }
-
+            $imageName = $request->image->store('public');
+        } 
         $post = post::find($id);
+        $post->image = $imageName;
         $post->title = $request->title;
         $post->subtitle = $request->subtitle;
         $post->slug = $request->slug;

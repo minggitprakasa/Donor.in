@@ -33,8 +33,7 @@
 
             @include('includes.messages')
 
-            <form role="form" action="{{ route('post.store') }}" method="post" enctype="
-            multipart/form-data">
+            <form role="form" action="{{ route('post.store') }}" method="post" enctype="multipart/form-data">
             {{ csrf_field() }}
               <div class="box-body">
                   <div class="col-lg-6">
@@ -85,7 +84,7 @@
                           <div class="form-group pull-left">
                               <label for="image">Image</label>
                               <input type="file" id="image" name="image">
-                            </div>
+                          </div>
                   </div>
 
               </div>

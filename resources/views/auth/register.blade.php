@@ -26,24 +26,10 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="telp" class="col-md-4 col-form-label text-md-right">{{ __('Nomor Telp') }}</label>
+                            <label for="addres" class="col-md-4 col-form-label text-md-right">{{ __('address') }}</label>
 
                             <div class="col-md-6">
-                                <input id="telp" type="number" min="0" max="1000000000" class="form-control{{ $errors->has('telp') ? ' is-invalid' : '' }}" name="telp" value="{{ old('telp') }}" required>
-
-                                @if ($errors->has('telp'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('telp') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="address" class="col-md-4 col-form-label text-md-right">{{ __('Alamat') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="address" type="text" class="form-control{{ $errors->has('address') ? ' is-invalid' : '' }}" name="address" value="{{ old('address') }}" required>
+                                <input id="address" type="text" class="form-control{{ $errors->has('address') ? ' is-invalid' : '' }}" name="address" value="{{ old('address') }}" required autofocus>
 
                                 @if ($errors->has('address'))
                                     <span class="invalid-feedback" role="alert">

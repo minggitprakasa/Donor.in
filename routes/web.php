@@ -27,12 +27,6 @@ Route::group(['namespace' => 'Admin'],function() {
     Route::resource('admin/category','CategoryController');
 });
 
-
-// Route::get('admin/home',function () {
-//     return view('admin/home');
-// });
-
-
 Route::get('dashboard', function () {
     return view('dashboard');
 });
