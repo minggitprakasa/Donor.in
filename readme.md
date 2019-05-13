@@ -10,10 +10,8 @@ Aplikasi untuk Memanagement Darah dari pendonor darah ke PMI dan mempermudah pen
 
 <h1 align="center"><b>Donor.</b><small>in</small></h1>
 
-[Pendahuluan](#pendahuluan) | 
-[Documentasi](#dokumentasi) |
-[Pembahasan](#pembahasan)
-:---:||:---:|:---:
+ [Pendahuluan](#pendahuluan) |  | [Documentasi](#dokumentasi) |   | [Pembahasan](#pembahasan) | 
+:---:|:---:|:---:|:---:|:---:|:---:
 
 # Pendahuluan
 [`^ kembali ke atas ^`](#)
