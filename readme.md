@@ -18,14 +18,19 @@ Aplikasi Informasi Donor darah
 [`^ kembali ke atas ^`](#)
 
 ### Blog Use Case
+<img src="public/ReadmeIMG/Use Case Diagram-Blog Use Case.png">
 
-
-
+### Manage Use Case
+<img src="public/ReadmeIMG/Use Case Diagram-Manage Use Case.png">
 
 ## Activity Diagram
 [`^ kembali ke atas ^`](#)
 
 Activity diagram
+
+<img src="public/ReadmeIMG/Donor.in DOC-Activity Diagram.png">
+<img src="public/ReadmeIMG/Donor.in DOC-Activity Diagram2.png">
+<img src="public/ReadmeIMG/Donor.in DOC-Activity Diagram3.png">
 
 
 ## Sequence Diagram
@@ -37,7 +42,7 @@ Sequence Diagram
 [`^ kembali ke atas ^`](#)
 
 Class diagram
-
+<img src="public/ReadmeIMG/Donor.in DOC-Page-6.png">
 
 # Pembahasan
 [`^ kembali ke atas ^`](#)
