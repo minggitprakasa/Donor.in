@@ -37,7 +37,7 @@
             <div class="box-body">
               <div class="box">
                 <div class="box-header">
-                  <h3 class="box-title">Permission Table</h3>
+                  @include('includes.messages')
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body">

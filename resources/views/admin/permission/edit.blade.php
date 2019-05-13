@@ -7,7 +7,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Roles
+        Permissions
         <small>Advanced form element</small>
       </h1>
       <ol class="breadcrumb">
@@ -23,11 +23,11 @@
         <div class="col-md-12">
           <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title">Roles</h3>
+              <h3 class="box-title">Permissions</h3>
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form" action="{{ route('role.update',$role->id) }} " method="POST" >
+            <form role="form" action="{{ route('permission.update',$permission->id) }} " method="POST" >
 
               {{ csrf_field() }}
               {{ method_field('PUT') }}
@@ -37,13 +37,13 @@
               <div class="box-body">
                   <div class="col-lg-offset-3 col-lg-6">
                       <div class="form-group">
-                        <label for="name">Roles</label>
-                        <input type="text" class="form-control" id="title" name="name" value="{{ $role->name }}"> 
+                        <label for="name">Permissions</label>
+                        <input type="text" class="form-control" id="title" name="name" placeholder="Permission" value="{{ $permission->name }}">
                       </div>
   
                       <div class="form-group">
                         <button type="submit" class="btn btn-primary">Submit</button>
-                        <a href="{{ route('role.index') }} " class="btn btn-warning">Back</a>
+                        <a href="{{ route('permission.index') }} " class="btn btn-warning">Back</a>
                       </div>
 
                   </div>

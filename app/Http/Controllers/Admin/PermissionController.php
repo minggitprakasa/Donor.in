@@ -67,8 +67,8 @@ class PermissionController extends Controller
      */
     public function edit($id)
     {
-        $permissions = permission::find($id);
-        return view('admin.permission.edit',compact('permissions'));
+        $permission = Permission::where('id',$id)->first();
+        return view('admin.permission.edit',compact('permission'));
     }
 
     /**
@@ -81,14 +81,14 @@ class PermissionController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request,[
-            'name' => 'required|unique:permissions'
+            'name' => 'required'
         ]);
 
-        $permission = permission::find($id);
+        $permission = Permission::find($id);
         $permission->name = $request->name;
         $permission->save();
 
-        return redirect(route('permission.index'));
+        return redirect(route('permission.index'))->with('message','Permission Update Succesfully');
     }
 
     /**
@@ -101,6 +101,6 @@ class PermissionController extends Controller
     {
         permission::where('id',$id)->delete();
 
-        return redirect()->back();
+        return redirect()->back()->with('message','Permission Delete Succesfully');
     }
 }
