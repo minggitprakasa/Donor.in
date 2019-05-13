@@ -1,11 +1,7 @@
 
 <h1 align="center"><b>Donor.</b><small>in</small></h1>
 
-<<<<<<< HEAD
- [Kelompok](#kelompok) |  [Pendahuluan](#pendahuluan) | [Documentasi](#dokumentasi) |   [Pembahasan](#pembahasan) 
-=======
  [Kelompok](#Kelompok) |  [Pendahuluan](#Pendahuluan) | [Documentasi](#Dokumentasi) |   [Pembahasan](#Pembahasan) 
->>>>>>> 2a79c5d6d86320a0e26306ab2a1e46e6b183380c
 :------:|:------:|:------:|:------:
 
 # Kelompok
