@@ -1,8 +1,8 @@
 
 <h1 align="center"><b>Donor.</b><small>in</small></h1>
 
- [Kelompok](#kelompok) |  [Pendahuluan](#pendahuluan) | [Documentasi](#dokumentasi) |   | [Pembahasan](#pembahasan) | 
-:---:|:---:|:---:|:---:|:---:|:---:
+ [Kelompok](#kelompok) |  [Pendahuluan](#pendahuluan) | [Documentasi](#dokumentasi) |   [Pembahasan](#pembahasan) 
+:------:|:------:|:------:|:------:
 
 # Kelompok
  1. [Ardhan Maulana](https://github.com/ardanmaulana97)
@@ -17,7 +17,9 @@ Aplikasi Informasi Donor darah
 ## Use Case Diagram
 [`^ kembali ke atas ^`](#)
 
-Use case diagram
+### Blog Use Case
+
+
 
 
 ## Activity Diagram
