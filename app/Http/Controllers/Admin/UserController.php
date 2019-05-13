@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Model\admin\admin;
 use App\Model\admin\role;
+use App\Model\user\User;
 
 class UserController extends Controller
 {
@@ -25,7 +26,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = admin::all();
+        $users = user::all();
         return view('admin.user.show',compact('users'));
     }
 
@@ -70,7 +71,7 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        return $users = user::all();
     }
 
     /**
@@ -82,7 +83,7 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        return $users = user::all();
     }
 
     /**

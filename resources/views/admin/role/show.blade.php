@@ -74,7 +74,7 @@
                             }" class="fa fa-fw fa-trash"></a>
                         </td>
                       </tr> 
-                    @endforeach
+                    @endforeach 
                     </tbody>
                     <tfoot>
                       <tr>
