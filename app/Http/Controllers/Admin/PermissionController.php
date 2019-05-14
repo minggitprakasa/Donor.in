@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Model\admin\Permission;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class PermissionController extends Controller
 {
@@ -25,6 +26,9 @@ class PermissionController extends Controller
     public function index()
     {
         $permissions = Permission::all();
+        if (session()->has('message')) {
+            Alert::success('Success', session('message'));
+        }
         return view('admin.permission.show',compact('permissions'));
     }
 
@@ -56,7 +60,7 @@ class PermissionController extends Controller
         $permission->for = $request->for;
         $permission->save();
 
-        return redirect(route('permission.index'));
+        return redirect(route('permission.index'))->with('message','Permission Added Succesfully');
     }
 
     /**

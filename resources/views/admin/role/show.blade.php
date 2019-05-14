@@ -14,11 +14,6 @@
       <h1>
         Role page
       </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">Examples</a></li>
-        <li class="active">Role</li>
-      </ol>
     </section>
 
     <section class="content">
@@ -26,18 +21,12 @@
         <div class="box">
             <div class="box-header with-border">
                   <a href="{{ route('role.create') }}" class="col-lg-offset-0 btn btn-success">Add New</a>
-                    <div class="box-tools pull-right">
-                        <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
-                        <i class="fa fa-minus"></i></button>
-                        <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
-                        <i class="fa fa-times"></i></button>
-                    </div>
             </div>
 
             <div class="box-body">
               <div class="box">
                 <div class="box-header">
-                  <h3 class="box-title">role Table</h3>
+                  <h3 class="box-title">Role Table</h3>
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body">

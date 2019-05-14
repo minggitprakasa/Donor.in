@@ -48,8 +48,8 @@ class Tagcontroller extends Controller
     public function store(Request $request)
     {
         $this -> validate($request,[
-            'name' => 'required|uniques:tags',
-            'slug' => 'required|uniques:tags'
+            'name' => 'required|unique:tags',
+            'slug' => 'required|unique:tags'
         ]);
 
         $tag = new tags;
@@ -57,7 +57,7 @@ class Tagcontroller extends Controller
         $tag->slug = $request->slug;
         $tag -> save();
 
-        return redirect(route('tag.index'));
+        return redirect(route('tag.index'))->with('message','Tag Add Succesfully');
     }
 
     /**
@@ -102,7 +102,7 @@ class Tagcontroller extends Controller
         $tag->slug = $request->slug;
         $tag -> save();
 
-        return redirect(route('tag.index'));
+        return redirect(route('tag.index'))->with('message','Tag Update Succesfully');
     }
 
     /**

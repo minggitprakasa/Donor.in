@@ -30,11 +30,10 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="../../index2.html"><b>Admin</b> Donor.in</a>
+  <a href="{{route('admin.home') }}"><b>Admin</b> Donor.in</a>
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
-    <p class="login-box-msg">Sign in to start your session</p>
 
     @include('includes.messages')
 
@@ -65,7 +64,7 @@
     </form>
 
     <a href="#">I forgot my password</a><br>
-    <a href="register.html" class="text-center">Register a new membership</a>
+    {{-- <a href="register.html" class="text-center">Register a new membership</a> --}}
 
   </div>
   <!-- /.login-box-body -->

@@ -1,4 +1,10 @@
-@extends('layouts.app')
+@extends('user/app')
+
+@section('bg-img',asset('user/img/contact-bg.jpg'))
+
+@section('title','Login')
+
+@section('sub-heading','')
 
 @section('content')
 <div class="container">
