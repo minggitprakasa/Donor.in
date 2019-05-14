@@ -23,13 +23,14 @@
         <div class="col-md-12">
           <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title">Title</h3>
+              <h3 class="box-title">User Update</h3>
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form" action="{{ route('user.store') }} " method="POST" >
+            <form role="form" action="{{ route('user.update',$user->id) }} " method="POST" >
 
               {{ csrf_field() }}
+              {{ method_field('PUT') }}
 
               @include('includes.messages')
 
@@ -37,17 +38,17 @@
                   <div class="col-lg-offset-3 col-lg-6">
                       <div class="form-group">
                         <label for="name">User Name</label>
-                        <input type="text" class="form-control" id="name" name="name" placeholder="Name" value="{{ old('name') }} ">
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Name" value="{{ $user->name }} ">
                       </div>
 
                       <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" class="form-control" id="email" name="email" placeholder="Email" value="{{ old('email') }}">
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Email" value="{{ $user->email }}">
                       </div>
 
                       <div class="form-group">
                             <label for="phone">Phone</label>
-                            <input type="text" class="form-control" id="phone" name="phone" value="{{ old('phone') }}" >
+                            <input type="text" class="form-control" id="phone" name="phone" value="{{ $user->phone }}" >
                       </div>
 
                       <div class="form-group">

@@ -48,7 +48,17 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        return $request->all();
+        $this->validate($request,[
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:admins'],
+            'phone' => ['required', 'numeric'],
+            'password' => ['required', 'string', 'min:6', 'confirmed'],
+        ]);
+
+        $request['password'] = bcrypt($request->password);
+        $user = admin::create($request->all());
+        $user->role()->sync($request->role);
+        return redirect(route('user.index'));
     }
 
     /**
@@ -70,7 +80,9 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        return $users = admin::all();
+        $user = admin::find($id);
+        $roles = role::all();
+        return view('admin.user.edit',compact('user','roles'));
     }
 
     /**
@@ -82,7 +94,14 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        return $users = admin::all();
+        $this->validate($request,[
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:admins'],
+            'phone' => ['required', 'string'],
+            'password' => ['required', 'string', 'min:6', 'confirmed'],
+        ]);
+
+
     }
 
     /**
@@ -93,6 +112,7 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-
+        admin::where('id',$id)->delete();
+        return redirect()->back();
     }
 }
