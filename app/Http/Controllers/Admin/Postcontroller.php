@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Model\user\post;
 use App\Model\user\tags;
 use App\Model\user\category;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class Postcontroller extends Controller
 {
@@ -27,7 +28,9 @@ class Postcontroller extends Controller
     public function index()
     {
         $posts = post::all();
-
+        if (session()->has('message')) {
+            Alert::success('Success', session('message'));
+        }
         return view('admin.post.show',compact('posts'));
     }
 
@@ -60,7 +63,7 @@ class Postcontroller extends Controller
         ]);
         if ($request->hasFile('image')) {
             $imageName = $request->image->store('public');
-        } 
+        }
         $post = new post;
         $post->image = $imageName;
         $post->title = $request->title;
@@ -69,7 +72,7 @@ class Postcontroller extends Controller
         $post->body = $request->body;
         $post->status = $request->status;
         $post-> save();
-        return redirect(route('post.index'));
+        return redirect(route('post.index'))->with('message','Post Added Succesfully');
     }
 
     /**
@@ -116,7 +119,7 @@ class Postcontroller extends Controller
 
         if ($request->hasFile('image')) {
             $imageName = $request->image->store('public');
-        } 
+        }
         $post = post::find($id);
         $post->image = $imageName;
         $post->title = $request->title;
@@ -128,7 +131,7 @@ class Postcontroller extends Controller
         $post->categories()->sync($request->categories);
         $post-> save();
 
-        return redirect(route('post.index'));
+        return redirect(route('post.index'))->with('message','Post Update Succesfully');
     }
 
     /**
@@ -140,6 +143,6 @@ class Postcontroller extends Controller
     public function destroy($id)
     {
         post::where('id',$id)->delete();
-        return redirect()->back();
+        return redirect()->back()->with('message','Post Delete Succesfully');
     }
 }

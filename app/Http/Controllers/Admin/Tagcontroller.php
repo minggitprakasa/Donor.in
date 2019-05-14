@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Model\user\tags;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class Tagcontroller extends Controller
 {
@@ -25,7 +26,9 @@ class Tagcontroller extends Controller
     public function index()
     {
         $tags = tags::all();
-
+        if (session()->has('message')) {
+            Alert::success('Success', session('message'));
+        }
         return view('admin.tag.show',compact('tags'));
     }
 
@@ -57,7 +60,7 @@ class Tagcontroller extends Controller
         $tag->slug = $request->slug;
         $tag -> save();
 
-        return redirect(route('tag.index'))->with('message','Tag Add Succesfully');
+        return redirect(route('tag.index'))->with('message','Tag Added Succesfully');
     }
 
     /**
@@ -114,6 +117,6 @@ class Tagcontroller extends Controller
     public function destroy($id)
     {
         tags::where('id',$id)->delete();
-        return redirect()->back();
+        return redirect()->back()->with('message','Tag Delete Succesfully');
     }
 }

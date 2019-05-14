@@ -20,8 +20,8 @@
             <div class="box-body">
                 <div class="box">
                     <div class="box-header">
-                        <h3 class="box-title">Post Table</h3>
-                    </div>    
+                        @include('sweetalert::alert')
+                    </div>
                       <div class="box-body">
                         <table id="example1" class="table table-bordered table-striped">
                           <thead>
@@ -61,7 +61,7 @@
 
                                   }" class="fa fa-fw fa-trash"></a>
                               </td>
-                            </tr> 
+                            </tr>
                           @endforeach
                           </tbody>
                           <tfoot>

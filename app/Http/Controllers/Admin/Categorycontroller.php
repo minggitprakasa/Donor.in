@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Model\user\category;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class Categorycontroller extends Controller
 {
@@ -25,7 +26,9 @@ class Categorycontroller extends Controller
     public function index()
     {
         $categories = category::all();
-
+        if (session()->has('message')) {
+            Alert::success('Success', session('message'));
+        }
         return view('admin.category.show',compact('categories'));
     }
 
@@ -57,7 +60,7 @@ class Categorycontroller extends Controller
         $category->slug = $request->slug;
         $category -> save();
 
-        return redirect(route('category.index'));
+        return redirect(route('category.index'))->with('message','Category Added Succesfully');
     }
 
     /**
@@ -102,7 +105,7 @@ class Categorycontroller extends Controller
         $category->slug = $request->slug;
         $category -> save();
 
-        return redirect(route('category.index'));
+        return redirect(route('category.index'))->with('message','Catergory Update Succesfully');
     }
 
     /**
@@ -114,6 +117,6 @@ class Categorycontroller extends Controller
     public function destroy($id)
     {
         category::where('id',$id)->delete();
-        return redirect()->back();
+        return redirect()->back()->with('message','Category Delete Succesfully');
     }
 }

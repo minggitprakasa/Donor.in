@@ -3,7 +3,7 @@
 @section('headSection')
 
 <link rel="stylesheet" href="{{ asset('admin/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css')}}">
-    
+
 @endsection
 
 @section('main-content')
@@ -26,9 +26,8 @@
             <div class="box-body">
               <div class="box">
                 <div class="box-header">
-                  @include('includes.messages')
+                  @include('sweetalert::alert')
                 </div>
-                <!-- /.box-header -->
                 <div class="box-body">
                   <table id="example1" class="table table-bordered table-striped">
                     <thead>
@@ -64,7 +63,7 @@
 
                             }" class="fa fa-fw fa-trash"></a>
                         </td>
-                      </tr> 
+                      </tr>
                     @endforeach
                     </tbody>
                     <tfoot>
