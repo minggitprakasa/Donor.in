@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Model\user\post;
 use App\Model\user\category;
 use App\Model\user\tags;
+use App\Model\user\User;
 
 class Homecontroller extends Controller
 {
@@ -30,5 +31,12 @@ class Homecontroller extends Controller
         $posts = $category->posts();
         $categories = category::all();
         return view('Blog.blog',compact('posts','categories'));
+    }
+
+    public function user(user $user)
+    {
+        $profiles = $user->all();
+        $categories = category::all();
+        return view('Blog.list',compact('profiles','categories'));
     }
 }

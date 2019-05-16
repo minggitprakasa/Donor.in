@@ -17,6 +17,7 @@ Route::group(['namespace' => 'User'],function() {
     Route::get('post/{post?}','PostController@post')->name('post');
     Route::get('post/tag/{tag}','HomeController@tag')->name('tag');
     Route::get('post/category/{category}','HomeController@category')->name('category');
+    Route::get('pendonor','HomeController@user')->name('user');
 });
 
 Route::group(['namespace' => 'Admin'],function() {

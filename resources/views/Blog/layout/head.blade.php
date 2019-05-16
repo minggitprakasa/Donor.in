@@ -9,6 +9,8 @@
 
 <link href="{{ asset('blog/common-css/ionicons.css')}}" rel="stylesheet">
 
+<link href="{{ asset('blog/common-css/swiper.css')}}" rel="stylesheet">
+
 <link href="{{ asset('blog/layout-1/css/styles.css')}}" rel="stylesheet">
 
 <link href="{{ asset('blog/layout-1/css/responsive.css')}}" rel="stylesheet">

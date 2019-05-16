@@ -13,7 +13,7 @@
             <a class="nav-link" href="{{ route('donor')}} ">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Pendonor</a>
+            <a class="nav-link" href="{{route('user')}} ">Pendonor</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Contact</a>
@@ -32,7 +32,7 @@
                   @csrf
               </form>
             @endif
-            
+
           </li>
         </ul>
       </div>
