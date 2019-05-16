@@ -21,12 +21,14 @@ class Homecontroller extends Controller
     public function tag(tags $tag)
     {
         $posts = $tag->posts();
-        return view('user.blog',compact('posts'));
+        $categories = category::all();
+        return view('Blog.blog',compact('posts','categories'));
     }
 
     public function category(category $category)
     {
         $posts = $category->posts();
-        return view('user.blog',compact('posts'));
+        $categories = category::all();
+        return view('Blog.blog',compact('posts','categories'));
     }
 }

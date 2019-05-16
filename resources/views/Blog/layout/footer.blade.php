@@ -6,7 +6,7 @@
             <div class="col-lg-4 col-md-6">
                 <div class="footer-section">
 
-                    <a class="logo" href="#"><img src="images/logo.png" alt="Logo Image"></a>
+                    {{-- <a class="logo" href="#"><img src="images/logo.png" alt="Logo Image"></a>
                     <p class="copyright">Bona @ 2017. All rights reserved.</p>
                     <p class="copyright">Designed by <a href="https://colorlib.com" target="_blank">Colorlib</a></p>
                     <ul class="icons">
@@ -15,7 +15,7 @@
                         <li><a href="#"><i class="ion-social-instagram-outline"></i></a></li>
                         <li><a href="#"><i class="ion-social-vimeo-outline"></i></a></li>
                         <li><a href="#"><i class="ion-social-pinterest-outline"></i></a></li>
-                    </ul>
+                    </ul> --}}
 
                 </div><!-- footer-section -->
             </div><!-- col-lg-4 col-md-6 -->
@@ -28,19 +28,19 @@
                             <li><a href="#" >{{$category->name}}</a></li>
                         @endforeach
                     </ul>
-                </div><!-- footer-section -->
-            </div><!-- col-lg-4 col-md-6 -->
+                </div>
+            </div>
 
             <div class="col-lg-4 col-md-6">
                 <div class="footer-section">
 
-                    <h4 class="title"><b>SUBSCRIBE</b></h4>
+                    {{-- <h4 class="title"><b>SUBSCRIBE</b></h4>
                     <div class="input-area">
                         <form>
                             <input class="email-input" type="text" placeholder="Enter your email">
                             <button class="submit-btn" type="submit"><i class="icon ion-ios-email-outline"></i></button>
                         </form>
-                    </div>
+                    </div> --}}
 
                 </div><!-- footer-section -->
             </div><!-- col-lg-4 col-md-6 -->

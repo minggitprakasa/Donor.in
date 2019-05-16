@@ -14,7 +14,5 @@
 
         @show
 
-    @include('Blog/layout/footer')
-
 </body>
 </html>

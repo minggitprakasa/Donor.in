@@ -16,9 +16,7 @@
                     <div class="single-post post-style-1">
 
                         <div class="blog-image"><img src="{{Storage::disk('local')->url($post->image)}}" alt="Blog Image"></div>
-{{--
-                        <p class="text-left"><b>Posted by</b>
-                                {{ $post->created_at->diffForHumans() }} </p> --}}
+
                         <div class="blog-info">
 
                             <h4 class="title"><a href="{{ route('post',$post->slug) }}">
@@ -42,4 +40,8 @@
             {{ $posts->links()}}
       </div>
     <br>
+
+    @include('Blog/layout/footer')
 @endsection
+
+
