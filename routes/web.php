@@ -31,10 +31,6 @@ Route::group(['namespace' => 'Admin'],function() {
     Route::post('admin-login','Auth\LoginController@login');
 });
 
-Route::get('dashboard', function () {
-    return view('dashboard');
-});
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
