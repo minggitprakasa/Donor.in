@@ -20,18 +20,13 @@
                 </div><!-- footer-section -->
             </div><!-- col-lg-4 col-md-6 -->
 
-            <div class="col-lg-4 col-md-6">
+            <div class="col-lg-4 col-md-4">
                     <div class="footer-section">
                     <h4 class="title"><b>CATAGORIES</b></h4>
-                    <ul>
-                        <li><a href="#">BEAUTY</a></li>
-                        <li><a href="#">HEALTH</a></li>
-                        <li><a href="#">MUSIC</a></li>
-                    </ul>
-                    <ul>
-                        <li><a href="#">SPORT</a></li>
-                        <li><a href="#">DESIGN</a></li>
-                        <li><a href="#">TRAVEL</a></li>
+                    <ul style="text-transform: uppercase;">
+                        @foreach ($categories as $category)
+                            <li><a href="#" >{{$category->name}}</a></li>
+                        @endforeach
                     </ul>
                 </div><!-- footer-section -->
             </div><!-- col-lg-4 col-md-6 -->
@@ -56,10 +51,10 @@
 
     <!-- SCIPTS -->
 
-	<script src="common-js/jquery-3.1.1.min.js"></script>
+	<script src="{{asset('blog/common-js/jquery-3.1.1.min.js')}}"></script>
 
-	<script src="common-js/tether.min.js"></script>
+	<script src="{{asset('blog/common-js/tether.min.js')}}"></script>
 
-	<script src="common-js/bootstrap.js"></script>
+	<script src="{{asset('blog/common-js/bootstrap.js')}}"></script>
 
-	<script src="common-js/scripts.js"></script>
+	<script src="{{asset('blog/common-js/scripts.js')}}"></script>

@@ -1,8 +1,10 @@
 @extends('Blog/app')
 
-@section('main-section')
+@section('Judul','Donor.in')
 
-<div class="slider"></div>
+@section('bg-judul',asset('blog/images/slider-1.jpg'))
+
+@section('main-section')
 
 <section class="blog-area section">
     <div class="container">
@@ -13,21 +15,20 @@
                 <div class="card h-100">
                     <div class="single-post post-style-1">
 
-                        <div class="blog-image"><img src="{{asset('blog/images/marion-michele-330691.jpg')}}" alt="Blog Image"></div>
-
-                        <a class="avatar" href="#"><img src="{{asset('blog/images/icons8-team-355979.jpg')}}" alt="Profile Image"></a>
+                        <div class="blog-image"><img src="{{Storage::disk('local')->url($post->image)}}" alt="Blog Image"></div>
+{{--
+                        <p class="text-left"><b>Posted by</b>
+                                {{ $post->created_at->diffForHumans() }} </p> --}}
                         <div class="blog-info">
 
                             <h4 class="title"><a href="{{ route('post',$post->slug) }}">
                                 <b>{{ $post-> title }}</b></a> <br>
-                                <strong>{{ $post->subtitle }}</strong>
                             </h4>
-                            <p class="post-meta">Posted by
-                                    {{ $post->created_at->diffForHumans() }} </p>
+                            <p class="align-text-bottom ">{{ $post->subtitle }}</p>
                             <ul class="post-footer">
-                                <li><a href="#"><i class="ion-heart"></i>57</a></li>
-                                <li><a href="#"><i class="ion-chatbubble"></i>6</a></li>
-                                <li><a href="#"><i class="ion-eye"></i>138</a></li>
+                                <li></li>
+                                <li><a href="#" ><i class="ion-heart align-center"></i>57</a></li>
+                                <li></li>
                             </ul>
 
                         </div>
@@ -37,6 +38,8 @@
         @endforeach
         </div>
 
-    <a class="load-more-btn" href="#"><b>LOAD MORE</b></a>
-
+    <div class="clearfix next d-flex justify-content-center">
+            {{ $posts->links()}}
+      </div>
+    <br>
 @endsection

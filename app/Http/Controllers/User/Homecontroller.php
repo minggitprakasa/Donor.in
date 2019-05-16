@@ -12,8 +12,9 @@ class Homecontroller extends Controller
 {
     public function index()
     {
-        $posts = post::where('status',1)->orderBy('created_at','DESC')->paginate(5);
-        return view('Blog.blog',compact('posts'));
+        $posts = post::where('status',1)->orderBy('created_at','DESC')->paginate(9);
+        $categories = category::all();
+        return view('Blog.blog',compact('posts','categories'));
         // return view('Blog.blog');
     }
 
