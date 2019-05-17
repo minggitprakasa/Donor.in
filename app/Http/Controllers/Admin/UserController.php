@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Model\admin\admin;
 use App\Model\admin\role;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class UserController extends Controller
 {
@@ -26,6 +27,9 @@ class UserController extends Controller
     public function index()
     {
         $users = admin::all();
+        if (session()->has('message')) {
+            Alert::success('Success', session('message'));
+        }
         return view('admin.user.show',compact('users'));
     }
 
@@ -96,12 +100,12 @@ class UserController extends Controller
     {
         $this->validate($request,[
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:admins'],
+            'email' => ['required', 'string', 'email', 'max:255'],
             'phone' => ['required', 'string'],
-            'password' => ['required', 'string', 'min:6', 'confirmed'],
         ]);
 
-
+        $user = admin::where('id',$id)->update($request->except('_token','_method'));
+        return redirect(route('user.index'))->with('message','User Updated Succesfully');
     }
 
     /**

@@ -38,33 +38,27 @@
                   <div class="col-lg-offset-3 col-lg-6">
                       <div class="form-group">
                         <label for="name">User Name</label>
-                        <input type="text" class="form-control" id="name" name="name" placeholder="Name" value="{{ $user->name }} ">
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Name" value="@if(old('name')) {{ old('name')}} @else {{ $user->name }} @endif">
                       </div>
 
                       <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" class="form-control" id="email" name="email" placeholder="Email" value="{{ $user->email }}">
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Email" value="@if(old('email')) {{ old('email')}} @else {{ $user->email }} @endif">
                       </div>
 
                       <div class="form-group">
                             <label for="phone">Phone</label>
-                            <input type="text" class="form-control" id="phone" name="phone" value="{{ $user->phone }}" >
-                      </div>
-
-                      <div class="form-group">
-                          <label for="password">Password</label>
-                          <input type="password" class="form-control" id="password" name="password" placeholder="Password">
-                      </div>
-
-                      <div class="form-group">
-                          <label for="password_confirmation">Confirm Password</label>
-                          <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" placeholder="Confirm Password">
+                            <input type="text" class="form-control" id="phone" name="phone" value="@if(old('phone')) {{ old('phone')}} @else {{ $user->phone }} @endif" >
                       </div>
 
                       <div class="form-group">
                           <label for="status">Status</label>
                           <div class="checkbox">
-                              <label><input type="checkbox" name="status" value="1">Status</label>
+                            <label><input type="checkbox" name="status"
+                                @if(old('status')==1 && $user->status==1)
+                                    checked
+                                @endif value="1"> Status
+                            </label>
                           </div>
                       </div>
 

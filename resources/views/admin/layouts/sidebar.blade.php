@@ -9,7 +9,7 @@
           <div class="pull-left image">
             <img src="{{ asset('admin/img/adminpng.png') }}" class="img-circle" alt="User Image">
           </div>
-          <div class="pull-left info">
+          <div class="pull-left info" style="text-transform:capitalize">
             <p>{{ Auth::user()->name }} </p>
           </div>
         </div>
