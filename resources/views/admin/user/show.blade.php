@@ -46,6 +46,7 @@
                     <tr>
                       <th>S.No</th>
                       <th>User Name</th>
+                      <th>Assign roles</th>
                       <th>Edit</th>
                       <th>Delete</th>
                     </tr>
@@ -55,6 +56,11 @@
                       <tr>
                         <td>{{ $loop->index + 1 }}</td>
                         <td>{{ $user-> name }} </td>
+                        <td>
+                            @foreach ($user->role as $role)
+                                {{ $role->name }},
+                            @endforeach
+                        </td>
                         <td><a href="{{ route('user.edit',$user->id)}} " class="fa fa-fw fa-edit"></a></td>
                         <td>
                           <form action=" {{ route('user.destroy',$user->id)}} " id="delete-form-{{$user->id}}" method="POST" style="display: none">
@@ -80,6 +86,7 @@
                       <tr>
                         <th>S.No</th>
                         <th>user Name</th>
+                        <th>Assign Roles</th>
                         <th>Edit</th>
                         <th>Delete</th>
                       </tr>

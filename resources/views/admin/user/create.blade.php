@@ -63,7 +63,9 @@
                       <div class="form-group">
                           <label for="status">Status</label>
                           <div class="checkbox">
-                              <label><input type="checkbox" name="status" value="1">Status</label>
+                            <label ><input type="checkbox" name="status" @if (old('status') == 1)
+                                checked
+                              @endif value="1">Status</label>
                           </div>
                       </div>
 

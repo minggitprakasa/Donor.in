@@ -2,7 +2,7 @@
     <div class="pull-right hidden-xs">
       <b>Version</b> 2.4.0
     </div>
-    <strong>Copyright &copy; 2014-2016 <a href="https://adminlte.io">Almsaeed Studio</a>.</strong> All rights
+    <strong>Copyright &copy; 2018-{{ Carbon\carbon::now()->year }} <a href="https://github.com/minggitprakasa/Donor.in">Donor.in</a>.</strong> All rights
     reserved.
   </footer>
 
@@ -44,5 +44,5 @@
 <script src="{{ asset('admin/dist/js/demo.js')}}"></script>
 
 @section('footerSection')
-    
+
 @show

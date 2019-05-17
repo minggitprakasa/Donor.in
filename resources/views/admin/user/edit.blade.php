@@ -55,9 +55,9 @@
                           <label for="status">Status</label>
                           <div class="checkbox">
                             <label><input type="checkbox" name="status"
-                                @if(old('status')==1 && $user->status==1)
-                                    checked
-                                @endif value="1"> Status
+                                @if (old('status')==1 || $user->status == 1)
+                                checked
+                                @endif value="1">Status</label>
                             </label>
                           </div>
                       </div>
@@ -68,7 +68,13 @@
                           @foreach ($roles as $role)
                               <div class="col-lg-3">
                                 <div class="checkbox">
-                                  <label > <input type="checkbox" name="role[]" value="{{ $role->id }} ">{{ $role->name}} </label>
+                                  <label > <input type="checkbox" name="role[]" value="{{ $role->id }} "
+                                    @foreach ($user->role as $user_role)
+                                        @if ($user_role-> id == $role->id)
+                                            checked
+                                        @endif
+                                    @endforeach
+                                    >{{ $role->name}} </label>
                                 </div>
                               </div>
                           @endforeach
