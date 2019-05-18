@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Model\user\User;
 
 class HomeController extends BaseController
 {
@@ -19,6 +20,7 @@ class HomeController extends BaseController
 
     public function index()
     {
-        return view('admin.home');
+        $user = User::all();
+        return view('admin.home',compact('user'));
     }
 }

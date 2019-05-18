@@ -47,7 +47,13 @@
                       <tr>
                         <td>{{ $loop->index + 1 }}</td>
                         <td>{{ $user-> name }} </td>
-                        <td>{{ $user-> status? 'Active' : 'Not Active' }} </td>
+                        <td>
+                            @if ($user->status)
+                            <span class="label label-warning"> Pending</span>
+                            @else
+                            <span class="label label-success"> Active</span>
+                            @endif
+                        </td>
                         <td><a href="{{ route('pendonor.edit',$user->id)}} " class="fa fa-fw fa-edit"></a></td>
                         <td>
                           <form action=" {{ route('user.destroy',$user->id)}} " id="delete-form-{{$user->id}}" method="POST" style="display: none">
