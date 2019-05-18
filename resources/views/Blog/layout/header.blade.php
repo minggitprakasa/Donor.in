@@ -11,7 +11,7 @@
     <ul class="main-menu visible-on-click offset-sm-7" id="main-menu">
         <li><a href="{{ route('donor') }} ">Home</a></li>
         <li><a href="#">Categories</a></li>
-        <li><a href="{{ route('user') }} ">Daftar Pendonor</a></li>
+        <li><a href="{{ route('pendonor') }} ">Daftar Pendonor</a></li>
         <li>
             @if (Auth::guest())
                 <a href="{{ route('login') }}">Login</a>

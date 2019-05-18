@@ -58,7 +58,7 @@ class UserController extends Controller
             'phone' => ['required', 'numeric'],
             'password' => ['required', 'string', 'min:6', 'confirmed'],
         ]);
-
+        $request->status? : $request['status']=0;
         $request['password'] = bcrypt($request->password);
         $user = admin::create($request->all());
         $user->role()->sync($request->role);
@@ -104,6 +104,7 @@ class UserController extends Controller
             'phone' => ['required', 'string'],
         ]);
 
+        $request->status? : $request['status']=0;
         $user = admin::where('id',$id)->update($request->except('_token','_method','role'));
         admin::find($id)->role()->sync($request->role);
         return redirect(route('user.index'))->with('message','User Updated Succesfully');

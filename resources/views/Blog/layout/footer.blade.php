@@ -60,8 +60,6 @@
     <script src="{{asset('blog/common-js/scripts.js')}}"></script>
 
     <script src="{{asset('blog/common-js/swiper.js')}}"></script>
-
-
 @section('footer-tambahan')
 
 @show

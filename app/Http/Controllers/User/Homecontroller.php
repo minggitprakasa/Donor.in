@@ -16,7 +16,6 @@ class Homecontroller extends Controller
         $posts = post::where('status',1)->orderBy('created_at','DESC')->paginate(9);
         $categories = category::all();
         return view('Blog.blog',compact('posts','categories'));
-        // return view('Blog.blog');
     }
 
     public function tag(tags $tag)
@@ -33,9 +32,16 @@ class Homecontroller extends Controller
         return view('Blog.blog',compact('posts','categories'));
     }
 
-    public function user(user $user)
+    public function pendonor()
     {
-        $profiles = $user->all();
+        $profiles = user::where('status',1)->paginate(9);
+        $categories = category::all();
+        return view('Blog.list',compact('profiles','categories'));
+    }
+
+    public function profile(user $user)
+    {
+        $profiles = $user->id;
         $categories = category::all();
         return view('Blog.list',compact('profiles','categories'));
     }

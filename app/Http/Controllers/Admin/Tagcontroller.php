@@ -17,6 +17,7 @@ class Tagcontroller extends Controller
     public function __construct()
     {
         $this->middleware('auth:admin');
+        $this->middleware('can:posts.tag');
     }
     /**
      * Display a listing of the resource.

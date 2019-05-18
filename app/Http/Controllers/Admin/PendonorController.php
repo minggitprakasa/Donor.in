@@ -4,10 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Model\user\category;
-use RealRashid\SweetAlert\Facades\Alert;
+use App\Model\user\User;
 
-class Categorycontroller extends Controller
+class PendonorController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -17,7 +16,6 @@ class Categorycontroller extends Controller
     public function __construct()
     {
         $this->middleware('auth:admin');
-        $this->middleware('can:posts.category');
     }
     /**
      * Display a listing of the resource.
@@ -26,11 +24,11 @@ class Categorycontroller extends Controller
      */
     public function index()
     {
-        $categories = category::all();
+        $users = user::all();
         if (session()->has('message')) {
             Alert::success('Success', session('message'));
         }
-        return view('admin.category.show',compact('categories'));
+        return view('admin.pendonor.show',compact('users'));
     }
 
     /**
@@ -40,7 +38,7 @@ class Categorycontroller extends Controller
      */
     public function create()
     {
-        return view('admin.category.category');
+        return view('admin.pendonor.create');
     }
 
     /**
@@ -51,17 +49,7 @@ class Categorycontroller extends Controller
      */
     public function store(Request $request)
     {
-        $this -> validate($request,[
-            'name' => 'required|unique:categories',
-            'slug' => 'required|unique:categories'
-        ]);
 
-        $category = new category;
-        $category->name = $request->name;
-        $category->slug = $request->slug;
-        $category -> save();
-
-        return redirect(route('category.index'))->with('message','Category Added Succesfully');
     }
 
     /**
@@ -83,8 +71,8 @@ class Categorycontroller extends Controller
      */
     public function edit($id)
     {
-        $category = category::where('id',$id)->first();
-        return view('admin.category.edit',compact('category'));
+        $user = user::find($id);
+        return view('admin.pendonor.edit',compact('user'));
     }
 
     /**
@@ -96,17 +84,15 @@ class Categorycontroller extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this -> validate($request,[
-            'name' => 'required',
-            'slug' => 'required'
+        $this->validate($request,[
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255'],
+            'address' => ['required', 'string'],
         ]);
 
-        $category = category::find($id);
-        $category->name = $request->name;
-        $category->slug = $request->slug;
-        $category -> save();
-
-        return redirect(route('category.index'))->with('message','Catergory Update Succesfully');
+        $request->status? : $request['status']=0;
+        $user = user::where('id',$id)->update($request->except('_token','_method'));
+        return redirect(route('user.index'))->with('message','User Updated Succesfully');
     }
 
     /**
@@ -117,7 +103,6 @@ class Categorycontroller extends Controller
      */
     public function destroy($id)
     {
-        category::where('id',$id)->delete();
-        return redirect()->back()->with('message','Category Delete Succesfully');
+        //
     }
 }

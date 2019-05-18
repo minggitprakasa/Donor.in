@@ -17,7 +17,8 @@ Route::group(['namespace' => 'User'],function() {
     Route::get('post/{post?}','PostController@post')->name('post');
     Route::get('post/tag/{tag}','HomeController@tag')->name('tag');
     Route::get('post/category/{category}','HomeController@category')->name('category');
-    Route::get('pendonor','HomeController@user')->name('user');
+    Route::get('pendonor','HomeController@pendonor')->name('pendonor');
+    Route::get('pendonor/{pendonor}','HomeController@profile');
 });
 
 Route::group(['namespace' => 'Admin'],function() {
@@ -28,6 +29,7 @@ Route::group(['namespace' => 'Admin'],function() {
     Route::resource('admin/role','RoleController');
     Route::resource('admin/permission','PermissionController');
     Route::resource('admin/category','CategoryController');
+    Route::resource('admin/pendonor','PendonorController');
     Route::get('admin-login','Auth\LoginController@showLoginForm')->name('admin.login');
     Route::post('admin-login','Auth\LoginController@login');
 });

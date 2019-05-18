@@ -8,12 +8,11 @@
 
 <section class="blog-area section">
     <div class="container">
-        <div class="row">
+        <div class="row" id="app">
         @foreach ($posts as $post)
             <div class="col-lg-4 col-md-6">
                 <div class="card h-100">
                     <div class="single-post post-style-1">
-                        @include('sweetalert::alert')
                         <div class="blog-image"><img src="{{Storage::disk('local')->url($post->image)}}" alt="Blog Image"></div>
 
                         <div class="blog-info">

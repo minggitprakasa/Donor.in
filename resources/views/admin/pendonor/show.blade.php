@@ -24,15 +24,6 @@
     <section class="content">
 
         <div class="box">
-            <div class="box-header with-border">
-                  <a href="{{ route('user.create') }}" class="col-lg-offset-0 btn btn-success">Add New</a>
-                    <div class="box-tools pull-right">
-                        <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
-                        <i class="fa fa-minus"></i></button>
-                        <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
-                        <i class="fa fa-times"></i></button>
-                    </div>
-            </div>
             @include('sweetalert::alert')
             <div class="box-body">
               <div class="box">
@@ -46,7 +37,6 @@
                     <tr>
                       <th>S.No</th>
                       <th>User Name</th>
-                      <th>Assign roles</th>
                       <th>Status</th>
                       <th>Edit</th>
                       <th>Delete</th>
@@ -57,13 +47,8 @@
                       <tr>
                         <td>{{ $loop->index + 1 }}</td>
                         <td>{{ $user-> name }} </td>
-                        <td>
-                            @foreach ($user->role as $role)
-                            {{ $role->name }},
-                            @endforeach
-                        </td>
                         <td>{{ $user-> status? 'Active' : 'Not Active' }} </td>
-                        <td><a href="{{ route('user.edit',$user->id)}} " class="fa fa-fw fa-edit"></a></td>
+                        <td><a href="{{ route('pendonor.edit',$user->id)}} " class="fa fa-fw fa-edit"></a></td>
                         <td>
                           <form action=" {{ route('user.destroy',$user->id)}} " id="delete-form-{{$user->id}}" method="POST" style="display: none">
                             {{ csrf_field() }}
@@ -87,8 +72,7 @@
                     <tfoot>
                       <tr>
                         <th>S.No</th>
-                        <th>user Name</th>
-                        <th>Assign Roles</th>
+                        <th>User Name</th>
                         <th>Status</th>
                         <th>Edit</th>
                         <th>Delete</th>

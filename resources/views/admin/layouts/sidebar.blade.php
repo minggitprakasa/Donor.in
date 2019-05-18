@@ -30,11 +30,18 @@
         <li class="header">MAIN NAVIGATION</li>
         <li class="active treeview">
             <li class=""><a href="{{ route('post.index') }}"><i class="fa fa-circle-o"></i> Post</a></li>
-            <li class=""><a href="{{ route('category.index')}}"><i class="fa fa-circle-o"></i> Categories</a></li>
-            <li class=""><a href="{{ route('tag.index')}}"><i class="fa fa-circle-o"></i> Tags</a></li>
+            @can('posts.category', Auth::user())
+                <li class=""><a href="{{ route('category.index')}}"><i class="fa fa-circle-o"></i> Categories</a></li>
+            @endcan
+            @can('posts.tag', Auth::user())
+                <li class=""><a href="{{ route('tag.index')}}"><i class="fa fa-circle-o"></i> Tags</a></li>
+            @endcan
             <li class=""><a href="{{ route('user.index')}} "><i class="fa fa-circle-o"></i> User</a></li>
-            <li class=""><a href="{{ route('role.index')}} "><i class="fa fa-circle-o"></i> Roles</a></li>
+            {{-- @can('posts.role', Auth::user()) --}}
+                <li class=""><a href="{{ route('role.index')}} "><i class="fa fa-circle-o"></i> Roles</a></li>
+            {{-- @endcan --}}
             <li class=""><a href="{{ route('permission.index')}} "><i class="fa fa-circle-o"></i> Permission</a></li>
+            <li class=""><a href="{{ route('pendonor.index')}} "><i class="fa fa-circle-o"></i> Pendonor</a></li>
         </li>
       </ul>
     </section>

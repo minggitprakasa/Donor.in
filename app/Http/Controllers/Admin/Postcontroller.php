@@ -8,6 +8,7 @@ use App\Model\user\post;
 use App\Model\user\tags;
 use App\Model\user\category;
 use RealRashid\SweetAlert\Facades\Alert;
+use Illuminate\Support\Facades\Auth;
 
 class Postcontroller extends Controller
 {
@@ -41,9 +42,12 @@ class Postcontroller extends Controller
      */
     public function create()
     {
-        $tags = tags::all();
-        $categories = category::all();
-        return view('admin.post.post',compact('tags','categories'));
+        if (Auth::user()->can('posts.create')) {
+            $tags = tags::all();
+            $categories = category::all();
+            return view('admin.post.post',compact('tags','categories'));
+        }
+        return redirect(route('admin.home'));
     }
 
     /**
@@ -94,10 +98,13 @@ class Postcontroller extends Controller
      */
     public function edit($id)
     {
-        $post = post::with('tags','categories')->where('id',$id)->first();
-        $tags = tags::all();
-        $categories = category::all();
-        return view('admin.post.edit',compact('tags','categories','post'));
+        if (Auth::user()->can('posts.update')) {
+            $post = post::with('tags','categories')->where('id',$id)->first();
+            $tags = tags::all();
+            $categories = category::all();
+            return view('admin.post.edit',compact('tags','categories','post'));
+        }
+        return redirect(route('admin.home'));
     }
 
     /**

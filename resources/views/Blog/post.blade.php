@@ -47,7 +47,7 @@
 
 							<div class="post-icons-area">
 								<ul class="post-icons">
-									<li><a href="#"><i class="ion-heart"></i>57</a></li>
+									<li><a href="" @click.prevent ><i class="ion-heart"></i>57</a></li>
 								</ul>
 							</div>
 						</div><!-- post-bottom-area -->
