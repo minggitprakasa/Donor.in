@@ -13,8 +13,6 @@ class admin extends Authenticatable
     public function role() {
         return $this->belongsToMany('App\Model\admin\role');
     }
-
-
     /**
      * The attributes that are mass assignable.
      *

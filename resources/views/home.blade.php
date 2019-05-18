@@ -1,12 +1,6 @@
-@extends('user/app')
+@extends('Blog/app')
 
-@section('bg-img',asset('user/img/contact-bg.jpg'))
-
-@section('title','Welcome To Home')
-
-@section('sub-heading','')
-
-@section('main-content') 
+@section('main-content')
 
 <article>
     <div class="container">

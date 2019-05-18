@@ -16,18 +16,17 @@
                         <div class="blog-image"><img src="{{Storage::disk('local')->url($post->image)}}" alt="Blog Image"></div>
 
                         <div class="blog-info">
-
                             <h4 class="title"><a href="{{ route('post',$post->slug) }}">
                                 <b>{{ $post-> title }}</b></a> <br>
                             </h4>
                             <p class="align-text-bottom ">{{ $post->subtitle }}</p>
-                            <ul class="post-footer">
+                            {{-- <ul class="post-footer">
                                 <li></li>
                                 <li><a href="#" ><i class="ion-heart align-center"></i>57</a></li>
                                 <li></li>
-                            </ul>
-
+                            </ul> --}}
                         </div>
+                        
                     </div>
                 </div>
             </div>

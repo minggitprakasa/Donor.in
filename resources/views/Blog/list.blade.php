@@ -67,7 +67,7 @@
                 <div class="card h-100">
                     <div class="single-post post-style-1">
 
-                        {{-- <div class="blog-image"><img src="{{Storage::disk('local')->url($post->image)}}" alt="Blog Image"></div> --}}
+                        <div class="blog-image"><img src="{{asset('blog\images\blood-donor .jpg')}}" alt="Blog Image"></div>
 
                         <div class="blog-info">
 
