@@ -10,13 +10,12 @@
 
     <ul class="main-menu visible-on-click offset-sm-7" id="main-menu">
         <li><a href="{{ route('donor') }} ">Home</a></li>
-        <li><a href="#">Categories</a></li>
         @if (Auth::guest())
         <li>
             <a href="{{ route('login') }}">Login</a>
         </li>
             @else
-            <li><a href="{{ route('pendonor') }} ">Daftar Pendonor</a></li>
+            <li><a href="{{ route('pendonor') }} ">Pendonor</a></li>
             <li>
                 <a class="dropdown-item" href="{{ route('logout') }}"
                 onclick="event.preventDefault();

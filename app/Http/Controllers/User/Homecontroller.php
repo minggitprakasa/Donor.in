@@ -45,4 +45,11 @@ class Homecontroller extends Controller
         $categories = category::all();
         return view('Blog.list',compact('profiles','categories'));
     }
+
+    public function search(user $user)
+    {
+        $profiles = $user->id;
+        $categories = category::all();
+        return view('Blog.list',compact('profiles','categories'));
+    }
 }

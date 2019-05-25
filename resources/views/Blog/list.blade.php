@@ -52,15 +52,6 @@
 
 <section class="blog-area section">
     <div class="container">
-            <form class="form-inline example" action="">
-                <select class="form-control select2">
-                    <option>A</option>
-                    <option>B</option>
-                    <option>O</option>
-                    <option>AB</option>
-                </select>
-                <button type="submit"><i class="fa fa-search"></i></button>
-            </form>
         <div class="row">
         @foreach ($profiles as $user)
             <div class="col-lg-4 col-md-6">
